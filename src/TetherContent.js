@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import isFunction from 'lodash.isfunction';
-import Tether from 'reactstrap-tether';
+import Tether from 'tether';
 
 const propTypes = {
   children: PropTypes.node.isRequired,
