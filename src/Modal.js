@@ -202,6 +202,10 @@ class Modal extends React.Component {
         role="document"
         ref={(c) => {
           this._dialog = c;
+          if (c && this._focus) {
+            c.parentNode.focus();
+            this._focus = false;
+          }
         }}
         {...attributes}
       >
@@ -223,14 +227,6 @@ class Modal extends React.Component {
       this.renderChildren(),
       this._element
     );
-
-    // check if modal should receive focus
-    if (this._focus) {
-      if (this._dialog && this._dialog.parentNode && typeof this._dialog.parentNode.focus === 'function') {
-        this._dialog.parentNode.focus();
-      }
-      this._focus = false;
-    }
   }
 
   renderChildren() {
